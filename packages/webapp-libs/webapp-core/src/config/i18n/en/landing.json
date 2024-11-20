@@ -1,0 +1,15 @@
+{
+  "landing": {
+    "hero": {
+      "title": {
+        "first": "Automate Your",
+        "second": "LinkedIn Presence"
+      },
+      "description": "Let AI power your professional network. Create engaging posts, articles, and responses automatically while maintaining your unique voice.",
+      "cta": {
+        "primary": "Get Started",
+        "secondary": "View Pricing"
+      }
+    }
+  }
+}
