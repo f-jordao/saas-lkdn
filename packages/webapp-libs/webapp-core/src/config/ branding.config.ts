@@ -37,9 +37,9 @@ export const BRANDING = {
         accent: '#F59E0B',
       },
       logo: {
-        default: '/images/logo.svg',
-        dark: '/images/logo-dark.svg',
-        icon: '/images/icon.svg',
+        default: '/icons/android-chrome-512x512.png',
+        dark: '/icons/android-chrome-512x512.png',
+        icon: '/icons/android-chrome-192x192.png',
       },
       favicon: '/icons/favicon.ico',
       icons: {

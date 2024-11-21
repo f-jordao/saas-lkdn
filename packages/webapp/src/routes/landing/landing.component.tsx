@@ -7,10 +7,18 @@ import { Pricing } from './components/pricing/pricing.component';
 import { CTASection } from './components/cta-section/cta-section.component';
 import { Footer } from './components/footer/footer.component';
 import { Contact } from './components/contact/contact.component';
+import { useBranding } from '@sb/webapp-core/hooks';
+import { Helmet } from 'react-helmet-async';
 
 export const Landing = () => {
+  const { product, visual } = useBranding();
+  
   return (
-    <div>
+    <>
+      <Helmet>
+        <title>{product.displayName}</title>
+        <meta name="description" content={product.description} />
+      </Helmet>
       <Suspense fallback={<div>Loading...</div>}>
         <IntlProvider locale="en" messages={enMessages}>
           <div>
@@ -23,7 +31,7 @@ export const Landing = () => {
           </div>
         </IntlProvider>
       </Suspense>
-    </div>
+    </>
   );
 };
 
