@@ -16,6 +16,7 @@
     "type-check": "tsc --noEmit --project tsconfig.app.json"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "intl": "^1.2.5",
     "lucide-react": "^0.378.0",
     "qrcode": "^1.5.3",
