@@ -32,10 +32,10 @@ import { Admin } from '../routes/admin';
 import { PasswordReset } from '../routes/auth/passwordReset';
 import ValidateOtp from '../routes/auth/validateOtp';
 import { AnonymousRoute, AuthRoute } from '../shared/components/routes';
-import { ConfirmEmail, Home, Login, Logout, NotFound, Profile, Signup } from './asyncComponents';
+import { ConfirmEmail, Home, Login, Logout, NotFound, Profile, Signup,Landing  } from './asyncComponents';
 import { LANG_PREFIX, RoutesConfig, TENANT_PREFIX } from './config/routes';
 import { ValidRoutesProviders } from './providers';
-import { Landing } from '../routes/landing/landing.component';
+
 
 export const App = () => {
   const { pathname, search } = useLocation();
@@ -47,7 +47,6 @@ export const App = () => {
 
       <Route element={<ValidRoutesProviders />}>
         <Route path={LANG_PREFIX}>
-          <Route index element={<Landing />} />
           <Route path={RoutesConfig.logout} element={<Logout />} />
 
           <Route element={<AnonymousRoute />}>
@@ -98,11 +97,14 @@ export const App = () => {
             <Route path={RoutesConfig.admin} element={<Admin />} />
           </Route>
 
+
           <Route path={RoutesConfig.confirmEmail} element={<ConfirmEmail />} />
           <Route path={RoutesConfig.privacyPolicy} element={<PrivacyPolicy />} />
           <Route path={RoutesConfig.termsAndConditions} element={<TermsAndConditions />} />
           <Route path={RoutesConfig.passwordReset.index} element={<PasswordReset />} />
         </Route>
+
+        {/* <-- INJECT ROUTE --> */}
 
         <Route
           path="*"
@@ -113,6 +115,8 @@ export const App = () => {
           }
         />
       </Route>
+
+      <Route path="/*" element={<Navigate to={`/${DEFAULT_LOCALE}${pathname}${search}`} />} />
     </Routes>
   );
 };
